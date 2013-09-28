@@ -35,6 +35,7 @@ def remove_relay(relay, message_name):
 
 class Relay(object):
     def __init__(self):
+        self.name = 'relay'
         self.message_names = set()
 
     def receive(self, message):
@@ -46,6 +47,7 @@ class Relay(object):
         add_relay(self, message_name)
 
     def transmit(self, message):
+        message.origin = self
         transmit(message)
 
     def unregister(self, message_name):
@@ -57,6 +59,11 @@ class Relay(object):
             remove_relay(self, name)
         self.message_names.clear()
 
+    def __str__(self):
+        return 'Relay: ' + self.name
+
 class Message(object):
-    def __init__(self, message_name='message'):
-        self.name = message_name 
+    def __init__(self, name='message'):
+        self.name = name 
+        self.origin = None
+
