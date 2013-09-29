@@ -6,7 +6,7 @@ Example:
     r2 = Receiver()
 
     r1.register(m1.name)
-    r2.transmit(m1) # All relays register to m1.name will receive this message
+    r2.transmit(m1) # All relays registered to m1.name will receive this message
 
 Message objects can have data attached to them and be treated as named dto objects.
 Example:
