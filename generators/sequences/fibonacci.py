@@ -1,3 +1,8 @@
+'''
+Fn = Fn-1 + Fn-2
+F0 = 0
+F1 = 1
+'''
 def fibonacci(n):
     x, y = 0, 1
     for i in range(n):
@@ -7,6 +12,12 @@ def fibonacci(n):
             x, y = y, x + y
             yield y
 
+'''
+Fn = Fn-1 + Fn-2 + Fn-3
+F0 = 1
+F1 = 1
+F2 = 1
+'''
 def tribonacci(n):
     x, y, z = 1, 1, 1 
     for i in range(n):
@@ -16,11 +27,11 @@ def tribonacci(n):
             yield z
 
 if __name__ == '__main__':
-    for x in fibonacci(20):
-        print(x)
+    for n in fibonacci(10):
+        print(n)
 
-    for x in tribonacci(20):
-        print(x)
+    for n in tribonacci(10):
+        print(n)
 
 
 
