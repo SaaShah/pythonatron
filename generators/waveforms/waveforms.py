@@ -3,6 +3,8 @@ Provides single generator that infinitely produces sine, square, ect... waveform
 Example:
     for x in waveform(frequency, sample_rate, wave_function)
         print(x)
+
+Each wave function can be use independently. The domain of each of function is [0, 1] and the output of each function is [-1, 1]
 '''
 from math import sin, pi
 
