@@ -16,5 +16,6 @@ def qs_mult(a, b):
 if __name__ == "__main__":
     a = 1024
     b = 8192
+    print("quarter sqaure")
     print(a, "*", b, ":", a * b)
     print("qs_mult(", a, ", ", b, "): ", qs_mult(a, b))
