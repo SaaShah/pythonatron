@@ -2,7 +2,7 @@
 Not entirely useful for a computer program :)
 Simplifies doing large multiplications by hand
 Typically, the quarter sqaure values are stored in a lookup table
-a * b = ((a + b) ^ 2 / 4) - ((a - b) ^ 2 / 4)
+a * b = (((a + b) ^ 2) / 4) - (((a - b) ^ 2) / 4)
 '''
 
 def qs(n):
