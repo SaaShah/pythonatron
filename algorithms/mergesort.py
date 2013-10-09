@@ -1,3 +1,9 @@
+"""
+Implementations of a top down and bottom up merge sort. 
+Top down approach is recursive and bottom up is not.
+However, both procedures use the same merge method. 
+"""
+
 def td_sort(a, aux, low, high):
     if high <= low: return
     mid = low + (high - low) / 2
