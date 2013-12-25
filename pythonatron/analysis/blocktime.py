@@ -1,23 +1,28 @@
 import os
+import empirical
 
-def etime():
+def time():
     user, sys, chuser, chsys, real = os.times()
-    print user, sys, chuser, chsys, real
     return user + sys
 
-def run(entry):
-    start = etime()
-    entry()
-    end = etime()
+def run(entry, *args):
+    start = time()
+    entry(*args)
+    end = time()
     return end - start
 
+if __name__ == '__main__':
+    def test(n):
+        total = 0
+        for x in range(0, n):
+            for y in range(0, n):
+                total += 2
+    n1 = 1000
+    n2 = 10000
+    t1 = run(test, (n1))
+    t2 = run(test, (n2))
 
-def init():
-    total = 0
-    for x in range(0, 1000):
-        for y in range(0, 1000):
-            total += 2
-            total /= .01
+    print 'Time 1:', t1
+    print 'Time 2:', t2
+    print 'Order of growth: ', empirical.order_of_growth(t1, t2, n1, n2)
 
-time = run(init)
-print time
